@@ -29,7 +29,7 @@ all: $(NAME)
 
 clean:
 	rm -f $(OBJ)
-	$(MAKE) -C $(LIBS_DIR) fclean
+	$(MAKE) -C $(LIBS_DIR) clean
 
 fclean: clean
 	rm -f $(NAME)

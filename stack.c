@@ -52,8 +52,6 @@ int pop(Stack *s)
 
 int peek(const Stack *s)
 {
-	if (is_empty(s))
-		ft_printf("empty\n");
 	return (s->items[s->top]);
 }
 
