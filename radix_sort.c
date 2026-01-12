@@ -12,25 +12,8 @@
 
 #include "stack.h"
 #include "main_operations.h"
-#include <stdbool.h>
 
-bool	is_sorted(const Stack *s)
-{
-	int	i;
-
-	if (is_empty(s) || s->top == 0)
-		return (true);
-	i = 0;
-	while (i < s->top)
-	{
-		if (s->items[i] < s->items[i + 1])
-			return (false);
-		i++;
-	}
-	return (true);
-}
-
-int	find_max(Stack *s)
+static int	find_max(const Stack *s)
 {
 	int	max;
 	int i;
@@ -48,7 +31,7 @@ int	find_max(Stack *s)
 	return (max);
 }
 
-int	get_number_of_bits(Stack *s)
+static int	get_number_of_bits(const Stack *s)
 {
 	int	max;
 	int	bit;
@@ -65,7 +48,7 @@ int	get_number_of_bits(Stack *s)
 	return (i);
 }
 
-void	part1(Stack *a, Stack *b, int bit)
+static void	part1(Stack *a, Stack *b, int bit)
 {
 	int size;
 	int i;
@@ -82,7 +65,7 @@ void	part1(Stack *a, Stack *b, int bit)
 	}
 }
 
-void	part2(Stack *a, Stack *b, int bit, int max_number_digits)
+static void	part2(Stack *a, Stack *b, int bit, int max_number_digits)
 {
 	int	size;
 	int	i;
@@ -104,6 +87,7 @@ void	part2(Stack *a, Stack *b, int bit, int max_number_digits)
 		while (!is_empty(b))
 			push_pop(a, b, "pa\n");
 }
+
 void	radix_sort(Stack *a, Stack *b)
 {
 	int	max_number_digits;
@@ -120,5 +104,3 @@ void	radix_sort(Stack *a, Stack *b)
 		bit++;
 	}
 }
-
-

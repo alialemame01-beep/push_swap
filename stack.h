@@ -28,7 +28,7 @@ bool	is_empty(const Stack *s);
 bool	is_full(const Stack *s);
 void	push(Stack *s, int value);
 int		pop(Stack *s);
-int		peek(Stack *s);
-
+int		peek(const Stack *s);
+bool	is_sorted(const Stack *s);
 
 #endif

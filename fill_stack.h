@@ -10,10 +10,12 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef FILL_STACK_H
+#define FILL_STACK_H
+
 #include <stdbool.h>
 #include "stack.h"
 
-bool	check_unique_values(const Stack *s, int value);
-bool	check_int_limit(char *word);
-void	rotate_no_print(Stack *s);
 bool	fill_stack_with_arguments(Stack *s, char **argv);
+
+#endif

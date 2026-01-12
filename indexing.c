@@ -12,7 +12,7 @@
 
 #include "stack.h"
 
-void	bubble_sort(int arr[], int length)
+static void	bubble_sort(int arr[], int length)
 {
 	int	i;
 	int	j;

@@ -10,10 +10,11 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdbool.h>
+#ifndef RADIX_SORT_H
+#define RADIX_SORT_H
+
 #include "stack.h"
 
-bool	is_sorted(const Stack *s);
-void	bubble_sort(int arr[], int length);
-void	indexing(Stack *s);
 void	radix_sort(Stack *a, Stack *b);
+
+#endif

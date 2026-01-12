@@ -10,8 +10,11 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef INDEXING_H
+#define INDEXING_H
+
 #include "stack.h"
 
-void	bubble_sort(int arr[], int length);
-
 void	indexing(Stack *s);
+
+#endif

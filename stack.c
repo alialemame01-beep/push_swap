@@ -10,8 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+#include <stdbool.h>
 #include "stack.h"
+#include "ft_printf.h"
 
 void init_stack(Stack *s)
 {
@@ -32,7 +33,7 @@ void push(Stack *s, int value)
 {
 	if(is_full(s))
 	{
-		printf("Error\nStack overflow, can't push.\n");
+		ft_printf("Error\n");
 		return ;
 	}
 	s->top += 1;
@@ -43,15 +44,31 @@ int pop(Stack *s)
 {
 	if(is_empty(s))
 	{
-		printf("Error\nstack underflow, nothing to pop.\n");
+		ft_printf("Error\n");
 		return -1;
 	}
 	return (s->items[s->top--]);
 }
 
-int peek(Stack *s)
+int peek(const Stack *s)
 {
 	if (is_empty(s))
-		printf("stack is empty\n");
+		ft_printf("empty\n");
 	return (s->items[s->top]);
+}
+
+bool	is_sorted(const Stack *s)
+{
+	int	i;
+
+	if (is_empty(s) || s->top == 0)
+		return (true);
+	i = 0;
+	while (i < s->top)
+	{
+		if (s->items[i] < s->items[i + 1])
+			return (false);
+		i++;
+	}
+	return (true);
 }
