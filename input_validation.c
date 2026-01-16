@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include <stdbool.h>
+#include <unistd.h>
 #include "libft.h"
 #include "stack.h"
 #include "ft_printf.h"
@@ -56,7 +57,7 @@ static bool	check_int_limit(const char *word)
 	return (true);
 }
 
-static bool	check_unique_values(const Stack *s, int value)
+static bool	check_unique_values(const t_stack *s, int value)
 {
 	int	i;
 
@@ -72,26 +73,26 @@ static bool	check_unique_values(const Stack *s, int value)
 	return (true);
 }
 
-bool	check_check_check_check(const Stack *s, const char **new_argv, int j)
+bool	check_check_check_check(const t_stack *s, const char **new_argv, int j)
 {
 	if (is_full(s))
 	{
-		ft_printf("Error\n");
+		write(2, "Error\n", 6);
 		return (false);
 	}
 	if (!check_input_characters(new_argv[j]))
 	{
-		ft_printf("Error\n");
+		write(2, "Error\n", 6);
 		return (false);
 	}
 	if (!check_int_limit(new_argv[j]))
 	{
-		ft_printf("Error\n");
+		write(2, "Error\n", 6);
 		return (false);
 	}
 	if (!check_unique_values(s, ft_atoi(new_argv[j])))
 	{
-		ft_printf("Error\n");
+		write(2, "Error\n", 6);
 		return (false);
 	}
 	return (true);

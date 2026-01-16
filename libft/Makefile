@@ -1,10 +1,9 @@
 NAME = libft.a
-
 CC = cc
+CFLAGS = -Wall -Wextra -Werror -Iinc
 
-CFLAGS = -Wall -Wextra -Werror
-
-SRC = \
+LIBFT_DIR = src/libft/
+LIBFT_FILES = \
 	ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c ft_isprint.c \
 	ft_strlen.c ft_memset.c ft_bzero.c ft_memcpy.c ft_memmove.c \
 	ft_strlcpy.c ft_strlcat.c ft_toupper.c ft_tolower.c ft_strchr.c \
@@ -16,7 +15,16 @@ SRC = \
 	ft_lstadd_back.c ft_lstdelone.c ft_lstclear.c ft_lstiter.c \
 	ft_lstmap.c
 
+PRINTF_DIR = src/printf/
+PRINTF_FILES = ft_print_char_2.c ft_print_char.c ft_printf.c
+
+SRC = $(addprefix $(LIBFT_DIR), $(LIBFT_FILES)) \
+	$(addprefix $(PRINTF_DIR), $(PRINTF_FILES))
+
 OBJ = $(SRC:.c=.o)
+
+%.o: %.c
+		$(CC) $(CFLAGS) -c $< -o $@
 
 all : $(NAME)
 

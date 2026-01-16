@@ -11,24 +11,24 @@
 /* ************************************************************************** */
 
 #ifndef STACK_H
-#define STACK_H
+# define STACK_H
 
-#include <stdbool.h>
+# include <stdbool.h>
 
-#define MAX 500
+# define MAX 500
 
-typedef struct
+typedef struct s
 {
-	int items[MAX];
-	int top;
-} Stack;
+	int	items[MAX];
+	int	top;
+}		t_stack;
 
-void	init_stack(Stack *s);
-bool	is_empty(const Stack *s);
-bool	is_full(const Stack *s);
-void	push(Stack *s, int value);
-int		pop(Stack *s);
-int		peek(const Stack *s);
-bool	is_sorted(const Stack *s);
+void	init_stack(t_stack *s);
+bool	is_empty(const t_stack *s);
+bool	is_full(const t_stack *s);
+void	push(t_stack *s, int value);
+int		pop(t_stack *s);
+int		peek(const t_stack *s);
+bool	is_sorted(const t_stack *s);
 
 #endif

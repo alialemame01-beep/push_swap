@@ -11,10 +11,10 @@
 /* ************************************************************************** */
 
 #ifndef INDEXING_H
-#define INDEXING_H
+# define INDEXING_H
 
-#include "stack.h"
+# include "stack.h"
 
-void	indexing(Stack *s);
+void	indexing(t_stack *s);
 
 #endif

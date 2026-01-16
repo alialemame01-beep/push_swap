@@ -37,7 +37,7 @@ static void	bubble_sort(int arr[], int length)
 	i = length - 1;
 }
 
-void	indexing(Stack *s)
+void	indexing(t_stack *s)
 {
 	int	arr[MAX];
 	int	i;

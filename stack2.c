@@ -1,24 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstiter.c                                       :+:      :+:    :+:   */
+/*   stack_utils.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aalemami <aalemami@student.42amman.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/25 00:30:33 by aalemami          #+#    #+#             */
-/*   Updated: 2025/12/25 00:30:33 by aalemami         ###   ########.fr       */
+/*   Created: 2026/01/16 17:41:02 by aalemami          #+#    #+#             */
+/*   Updated: 2026/01/16 17:41:02 by aalemami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <stdbool.h>
+#include "stack.h"
 
-void	ft_lstiter(t_list *lst, void (*f)(void *))
+void	init_stack(t_stack *s)
 {
-	if (!f)
-		return ;
-	while (lst)
-	{
-		f(lst->content);
-		lst = lst->next;
-	}
+	s->top = -1;
+}
+
+bool	is_empty(const t_stack *s)
+{
+	return (s->top == -1);
+}
+
+bool	is_full(const t_stack *s)
+{
+	return (s->top == MAX - 1);
 }

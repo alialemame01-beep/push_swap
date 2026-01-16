@@ -19,7 +19,7 @@
 
 static void	free_new(char **new_argv)
 {
-	int i;
+	int	i;
 
 	if (!new_argv)
 		return ;
@@ -32,11 +32,11 @@ static void	free_new(char **new_argv)
 	free(new_argv);
 }
 
-bool	fill_stack_with_arguments(Stack *s, char **argv)
+bool	fill_stack_with_arguments(t_stack *s, char **argv)
 {
-	char **new_argv;
-	int	i;
-	int	j;
+	char	**new_argv;
+	int		i;
+	int		j;
 
 	i = 1;
 	while (!is_full(s) && argv[i])
@@ -50,7 +50,7 @@ bool	fill_stack_with_arguments(Stack *s, char **argv)
 				free_new(new_argv);
 				new_argv = NULL;
 				return (false);
-			}	
+			}
 			push(s, ft_atoi(new_argv[j]));
 			rotate(s, "");
 			j++;

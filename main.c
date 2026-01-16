@@ -16,22 +16,10 @@
 #include "indexing.h"
 #include "radix_sort.h"
 
-void	print_stack(Stack *s)
-{
-	int	i;
-
-	i = s->top;
-	while (i >= 0)
-	{
-		ft_printf("stack[%d]: %d\n", i, s->items[i]);
-		i--;
-	}
-}
-
 void	push_swap(int argc, char **argv)
 {
-	Stack a;
-	Stack b;
+	t_stack	a;
+	t_stack	b;
 
 	if (argc == 1)
 		return ;
@@ -45,7 +33,7 @@ void	push_swap(int argc, char **argv)
 	radix_sort(&a, &b);
 }
 
-int main(int argc, char **argv)
+int	main(int argc, char **argv)
 {
 	push_swap(argc, argv);
 	return (0);

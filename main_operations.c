@@ -14,9 +14,9 @@
 #include "main_operations.h"
 #include "ft_printf.h"
 
-void	swap(Stack *s, char *wrd)
+void	swap(t_stack *s, char *wrd)
 {
-	int temp;
+	int	temp;
 
 	if (is_empty(s) || s->top == 0)
 		return ;
@@ -26,7 +26,7 @@ void	swap(Stack *s, char *wrd)
 	ft_printf("%s", wrd);
 }
 
-void	push_pop(Stack *s1, Stack *s2, char *wrd)
+void	push_pop(t_stack *s1, t_stack *s2, char *wrd)
 {
 	if (!is_empty(s2))
 	{
@@ -37,7 +37,7 @@ void	push_pop(Stack *s1, Stack *s2, char *wrd)
 	}
 }
 
-void	rotate(Stack *s, char *wrd)
+void	rotate(t_stack *s, char *wrd)
 {
 	int	i;
 	int	temp;
@@ -53,19 +53,15 @@ void	rotate(Stack *s, char *wrd)
 	}
 	s->items[0] = temp;
 	ft_printf("%s", wrd);
-	//A B
-	//B C
-	//C D
-	//D A
 }
 
-void	double_rotate(Stack *s1, Stack *s2)
+void	double_rotate(t_stack *s1, t_stack *s2)
 {
 	rotate(s1, "r");
 	rotate(s2, "r\n");
 }
 
-void	reverse_rotate(Stack *s, char *wrd)
+void	reverse_rotate(t_stack *s, char *wrd)
 {
 	int	i;
 	int	temp;
@@ -81,8 +77,4 @@ void	reverse_rotate(Stack *s, char *wrd)
 	}
 	s->items[i] = temp;
 	ft_printf("%s", wrd);
-	//A D
-	//B A
-	//C B
-	//D C
 }

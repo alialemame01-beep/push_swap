@@ -15,8 +15,8 @@
 
 # include <stdarg.h>
 # include <unistd.h>
+# include "libft.h"
 
-size_t	ft_strlen(const char *s);
 void	ft_print_c(char c, int *i, int *total);
 void	ft_print_s(char *s, int *i, int *total);
 void	ft_print_di(int num, int *i, int *total);

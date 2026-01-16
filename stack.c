@@ -10,52 +10,38 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <unistd.h>
 #include <stdbool.h>
 #include "stack.h"
 #include "ft_printf.h"
 
-void init_stack(Stack *s)
+void	push(t_stack *s, int value)
 {
-	s->top = -1;
-}
-
-bool is_empty(const Stack *s)
-{
-	return (s->top == -1);
-}
-
-bool is_full(const Stack *s)
-{
-	return (s->top == MAX - 1);
-}
-
-void push(Stack *s, int value)
-{
-	if(is_full(s))
+	if (is_full(s))
 	{
-		ft_printf("Error\n");
+		write(2, "Error\n", 6);
 		return ;
 	}
 	s->top += 1;
 	s->items[s->top] = value;
 }
 
-int pop(Stack *s)
+int	pop(t_stack *s)
 {
-	if(is_empty(s))
+	if (is_empty(s))
 	{
-		ft_printf("Error\n");
-		return -1;
+		write(2, "Error\n", 6);
+		return (-1);
 	}
 	return (s->items[s->top--]);
 }
 
-int peek(const Stack *s)
+int	peek(const t_stack *s)
 {
 	return (s->items[s->top]);
 }
 
-bool	is_sorted(const Stack *s)
+bool	is_sorted(const t_stack *s)
 {
 	int	i;
 

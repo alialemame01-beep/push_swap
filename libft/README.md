@@ -10,7 +10,7 @@ This library consists of 3 parts:
 1.  **Part 1 - Libc functions**: Reimplementation of standard C library functions. They have the same prototypes and behaviors as the originals (e.g., `strlen` becomes `ft_strlen`).
 2.  **Part 2 - Additional functions**: A set of useful functions that are either not included in libc or exist in a different form (e.g., `ft_strjoin`, `ft_split`).
 3.  **Part 3 - Linked Lists**: Functions to manipulate and manage linked lists.
-
+4.  **part 4 - ft_printf**: ft_printf was added to this project
 
 ## Instructions
 

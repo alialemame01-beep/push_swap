@@ -11,10 +11,10 @@
 /* ************************************************************************** */
 
 #ifndef RADIX_SORT_H
-#define RADIX_SORT_H
+# define RADIX_SORT_H
 
-#include "stack.h"
+# include "stack.h"
 
-void	radix_sort(Stack *a, Stack *b);
+void	radix_sort(t_stack *a, t_stack *b);
 
 #endif

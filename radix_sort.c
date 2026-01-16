@@ -13,10 +13,10 @@
 #include "stack.h"
 #include "main_operations.h"
 
-static int	find_max(const Stack *s)
+static int	find_max(const t_stack *s)
 {
 	int	max;
-	int i;
+	int	i;
 
 	if (is_empty(s))
 		return (-1);
@@ -31,7 +31,7 @@ static int	find_max(const Stack *s)
 	return (max);
 }
 
-static int	get_number_of_bits(const Stack *s)
+static int	get_number_of_bits(const t_stack *s)
 {
 	int	max;
 	int	bit;
@@ -48,10 +48,10 @@ static int	get_number_of_bits(const Stack *s)
 	return (i);
 }
 
-static void	part1(Stack *a, Stack *b, int bit)
+static void	part1(t_stack *a, t_stack *b, int bit)
 {
-	int size;
-	int i;
+	int	size;
+	int	i;
 
 	size = a->top;
 	i = 0;
@@ -65,7 +65,7 @@ static void	part1(Stack *a, Stack *b, int bit)
 	}
 }
 
-static void	part2(Stack *a, Stack *b, int bit, int max_number_digits)
+static void	part2(t_stack *a, t_stack *b, int bit, int max_number_digits)
 {
 	int	size;
 	int	i;
@@ -88,7 +88,7 @@ static void	part2(Stack *a, Stack *b, int bit, int max_number_digits)
 			push_pop(a, b, "pa\n");
 }
 
-void	radix_sort(Stack *a, Stack *b)
+void	radix_sort(t_stack *a, t_stack *b)
 {
 	int	max_number_digits;
 	int	bit;

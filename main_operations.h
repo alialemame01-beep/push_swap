@@ -11,18 +11,14 @@
 /* ************************************************************************** */
 
 #ifndef MAIN_OPERATIONS_H
-#define MAIN_OPERATIONS_H
+# define MAIN_OPERATIONS_H
 
-#include "stack.h"
+# include "stack.h"
 
-void	swap(Stack *s, char* wrd);
-
-void	push_pop(Stack *s1, Stack *s2, char* wrd);
-
-void	rotate(Stack *s, char* wrd);
-
-void	double_rotate(Stack *s1, Stack *s2);
-
-void	reverse_rotate(Stack *s, char* wrd);
+void	swap(t_stack *s, char *wrd);
+void	push_pop(t_stack *s1, t_stack *s2, char *wrd);
+void	rotate(t_stack *s, char *wrd);
+void	double_rotate(t_stack *s1, t_stack *s2);
+void	reverse_rotate(t_stack *s, char *wrd);
 
 #endif

@@ -11,11 +11,11 @@
 /* ************************************************************************** */
 
 #ifndef FILL_STACK_H
-#define FILL_STACK_H
+# define FILL_STACK_H
 
-#include <stdbool.h>
-#include "stack.h"
+# include <stdbool.h>
+# include "stack.h"
 
-bool	fill_stack_with_arguments(Stack *s, char **argv);
+bool	fill_stack_with_arguments(t_stack *s, char **argv);
 
 #endif
