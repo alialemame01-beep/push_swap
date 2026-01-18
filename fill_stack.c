@@ -32,6 +32,17 @@ static void	free_new(char **new_argv)
 	free(new_argv);
 }
 
+static bool	check_for_null(char **new_argv)
+{
+	if (!new_argv)
+	{
+		free_new(new_argv);
+		new_argv = NULL;
+		return (false);
+	}
+	return (true);
+}
+
 bool	fill_stack_with_arguments(t_stack *s, char **argv)
 {
 	char	**new_argv;
@@ -43,17 +54,17 @@ bool	fill_stack_with_arguments(t_stack *s, char **argv)
 	{
 		j = 0;
 		new_argv = ft_split(argv[i], ' ');
+		if (!new_argv)
+			return (false);
 		while (new_argv[j])
 		{
 			if (!check_check_check_check(s, (const char **)new_argv, j))
 			{
 				free_new(new_argv);
-				new_argv = NULL;
 				return (false);
 			}
-			push(s, ft_atoi(new_argv[j]));
+			push(s, ft_atoi(new_argv[j++]));
 			rotate(s, "");
-			j++;
 		}
 		free_new(new_argv);
 		i++;
