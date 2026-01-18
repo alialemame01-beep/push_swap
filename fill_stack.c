@@ -32,17 +32,6 @@ static void	free_new(char **new_argv)
 	free(new_argv);
 }
 
-static bool	check_for_null(char **new_argv)
-{
-	if (!new_argv)
-	{
-		free_new(new_argv);
-		new_argv = NULL;
-		return (false);
-	}
-	return (true);
-}
-
 bool	fill_stack_with_arguments(t_stack *s, char **argv)
 {
 	char	**new_argv;
