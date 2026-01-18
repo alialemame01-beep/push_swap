@@ -1,4 +1,4 @@
-*This project has been created as part of the 42 curriculum by aalemami@student.42amman.com*
+*This project has been created as part of the 42 curriculum by aalemami*
 
 # Push_swap
 *Because Swap_push doesn’t feel as natural*

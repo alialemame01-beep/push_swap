@@ -39,20 +39,25 @@ static bool	check_input_characters(const char *word)
 
 static bool	check_int_limit(const char *word)
 {
-	int	length;
+	int		length;
+	int		i;
+	bool	is_negative;
 
 	length = ft_strlen(word);
-	if (length > 11)
+	i = 0;
+	is_negative = word[0] == '-';
+	if (is_negative)
+		i++;
+	while (word[i] == '0' && i < length - 1)
+		i++;
+	if (length - i > 10)
 		return (false);
-	if (length == 11 && word[0] == '-')
+	if (length - i == 10)
 	{
-		if (ft_strncmp(word, "-2147483648", 12) > 0)
-			return (false);
-	}
-	else if (length == 10)
-	{
-		if (ft_strncmp(word, "2147483647", 11) > 0)
-			return (false);
+		if (is_negative)
+			return (ft_strncmp(&word[i], "2147483648", 10) <= 0);
+		else
+			return (ft_strncmp(&word[i], "2147483647", 10) <= 0);
 	}
 	return (true);
 }
