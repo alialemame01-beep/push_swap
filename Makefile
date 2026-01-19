@@ -4,7 +4,7 @@ CFLAGS = -Wall -Wextra -Werror
 
 SRC = \
 	stack.c stack2.c main_operations.c fill_stack.c \
-	indexing.c input_validation.c radix_sort.c main.c
+	indexing.c input_validation.c radix_sort.c small_sort.c main.c
 
 OBJ	= $(SRC:.c=.o)
 
