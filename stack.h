@@ -15,7 +15,7 @@
 
 # include <stdbool.h>
 
-# define MAX 500
+# define MAX 1024
 
 typedef struct s
 {

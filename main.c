@@ -24,7 +24,7 @@ void	push_swap(int argc, char **argv)
 	t_stack	b;
 	int		size;
 
-	if (argc < 2 || argc > 501)
+	if (argc < 2 || argc > 1025)
 		return ;
 	init_stack(&a);
 	init_stack(&b);
